@@ -1,0 +1,1615 @@
+<!doctype html>
+<html lang="ru" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ольга Александровна — преподаватель русского языка</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background: #09090b;
+        color: #e4e4e7;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      .container {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      section {
+        padding: 64px 0;
+      }
+      @media (min-width: 768px) {
+        section {
+          padding: 96px 0;
+        }
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, #09090b, #18181b, #09090b);
+        min-height: calc(100vh - 56px);
+        display: flex;
+        align-items: center;
+      }
+      .hero-pattern {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.06) 1px,
+          transparent 1px
+        );
+        background-size: 24px 24px;
+        opacity: 0.5;
+      }
+      .hero-circle1 {
+        position: absolute;
+        top: -160px;
+        right: -160px;
+        width: 384px;
+        height: 384px;
+        border-radius: 50%;
+        border: 1px solid rgba(245, 158, 11, 0.1);
+      }
+      .hero-circle2 {
+        position: absolute;
+        bottom: -128px;
+        left: -128px;
+        width: 288px;
+        height: 288px;
+        border-radius: 50%;
+        border: 1px solid rgba(245, 158, 11, 0.1);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        align-items: center;
+      }
+      @media (min-width: 768px) {
+        .hero-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 64px;
+        }
+      }
+      .hero-photo-wrap {
+        display: flex;
+        justify-content: center;
+        order: 2;
+      }
+      @media (min-width: 768px) {
+        .hero-photo-wrap {
+          justify-content: flex-end;
+          order: 1;
+        }
+      }
+      .hero-photo-inner {
+        position: relative;
+      }
+      .hero-ring1 {
+        position: absolute;
+        inset: -16px;
+        border-radius: 50%;
+        border: 1px solid rgba(245, 158, 11, 0.2);
+      }
+      .hero-ring2 {
+        position: absolute;
+        inset: -32px;
+        border-radius: 50%;
+        border: 1px solid rgba(245, 158, 11, 0.1);
+      }
+      .hero-photo {
+        position: relative;
+        width: 192px;
+        height: 192px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid rgba(245, 158, 11, 0.4);
+        box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.1);
+      }
+      @media (min-width: 640px) {
+        .hero-photo {
+          width: 224px;
+          height: 224px;
+        }
+      }
+      @media (min-width: 768px) {
+        .hero-photo {
+          width: 288px;
+          height: 288px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .hero-photo {
+          width: 320px;
+          height: 320px;
+        }
+      }
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 75%;
+      }
+      .hero-text {
+        text-align: center;
+        order: 1;
+      }
+      @media (min-width: 768px) {
+        .hero-text {
+          text-align: left;
+          order: 2;
+        }
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 9999px;
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        background: rgba(245, 158, 11, 0.1);
+        padding: 6px 16px;
+        font-size: 14px;
+        color: #fbbf24;
+        margin-bottom: 20px;
+      }
+      .hero h1 {
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        color: #fff;
+        line-height: 1.2;
+      }
+      @media (min-width: 640px) {
+        .hero h1 {
+          font-size: 48px;
+        }
+      }
+      @media (min-width: 768px) {
+        .hero h1 {
+          font-size: 60px;
+        }
+      }
+      .hero-subtitle {
+        font-size: 16px;
+        color: #a1a1aa;
+        margin-top: 8px;
+      }
+      @media (min-width: 640px) {
+        .hero-subtitle {
+          font-size: 18px;
+        }
+      }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 24px;
+      }
+      @media (min-width: 640px) {
+        .hero-stats {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+      }
+      .stat-value {
+        font-size: 24px;
+        font-weight: 700;
+        color: #fbbf24;
+      }
+      @media (min-width: 640px) {
+        .stat-value {
+          font-size: 30px;
+        }
+      }
+      @media (min-width: 768px) {
+        .stat-value {
+          font-size: 36px;
+        }
+      }
+      .stat-label {
+        font-size: 12px;
+        color: #71717a;
+        margin-top: 2px;
+      }
+      @media (min-width: 640px) {
+        .stat-label {
+          font-size: 14px;
+        }
+      }
+      .hero-quote {
+        position: relative;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(245, 158, 11, 0.2);
+        font-size: 16px;
+        font-style: italic;
+        color: #d4d4d8;
+      }
+      @media (min-width: 640px) {
+        .hero-quote {
+          font-size: 18px;
+        }
+      }
+      .hero-quote-mark {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 48px;
+        color: rgba(245, 158, 11, 0.3);
+        line-height: 1;
+      }
+      @media (min-width: 768px) {
+        .hero-quote-mark {
+          left: 0;
+          transform: none;
+        }
+      }
+
+      /* Section title */
+      .section-title {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        text-align: center;
+        margin-bottom: 48px;
+        color: #fff;
+      }
+      @media (min-width: 768px) {
+        .section-title {
+          font-size: 36px;
+        }
+      }
+
+      /* About */
+      .about-text {
+        max-width: 768px;
+        margin: 0 auto;
+        color: #d4d4d8;
+        line-height: 1.7;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .about-box {
+        margin-top: 32px;
+        border-radius: 8px;
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        background: rgba(245, 158, 11, 0.05);
+        padding: 20px;
+      }
+      .about-box-flex {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .about-box-text {
+        color: #fcd34d;
+        font-size: 14px;
+      }
+      .about-side {
+        margin-top: 32px;
+        border-radius: 8px;
+        border: 1px solid rgba(113, 113, 122, 0.5);
+        background: rgba(113, 113, 122, 0.15);
+        padding: 20px;
+      }
+      .about-side-flex {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .about-side-content h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+      .about-side-content p {
+        font-size: 14px;
+        color: #d4d4d8;
+      }
+
+      /* How it works */
+      .how-grid {
+        display: grid;
+        gap: 24px;
+        max-width: 1024px;
+        margin: 0 auto;
+      }
+      @media (min-width: 640px) {
+        .how-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .how-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .how-card {
+        border-radius: 12px;
+        border: 1px solid #27272a;
+        background: rgba(24, 24, 27, 0.5);
+        padding: 24px;
+      }
+      .how-card-icon {
+        display: flex;
+        width: 56px;
+        height: 56px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background: rgba(245, 158, 11, 0.1);
+        margin-bottom: 16px;
+      }
+      .how-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+      .how-card p {
+        font-size: 14px;
+        color: #a1a1aa;
+      }
+
+      /* Tables */
+      .table-wrap {
+        max-width: 1024px;
+        margin: 0 auto;
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        font-size: 14px;
+        text-align: left;
+        border-collapse: collapse;
+      }
+      thead th {
+        padding: 12px 16px 12px 0;
+        color: #a1a1aa;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+        border-bottom: 1px solid #27272a;
+      }
+      thead th + th {
+        padding-left: 16px;
+      }
+      thead th:last-child {
+        padding-left: 16px;
+        padding-right: 0;
+      }
+      tbody td {
+        padding: 16px 16px 16px 0;
+        border-bottom: 1px solid rgba(39, 39, 42, 0.5);
+        color: #d4d4d8;
+      }
+      tbody td + td {
+        padding-left: 16px;
+      }
+      tbody td:last-child {
+        padding-left: 16px;
+        padding-right: 0;
+      }
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .table-grade {
+        font-weight: 500;
+        color: #fff;
+      }
+      .table-price {
+        color: #fbbf24;
+        font-weight: 600;
+      }
+      .popular-badge {
+        display: inline-block;
+        border-radius: 9999px;
+        background: rgba(245, 158, 11, 0.15);
+        padding: 2px 8px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #fbbf24;
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+
+      /* Includes lists */
+      .includes-grid {
+        max-width: 1024px;
+        margin: 48px auto 0;
+        display: grid;
+        gap: 32px;
+      }
+      @media (min-width: 640px) {
+        .includes-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .includes-block h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 16px;
+      }
+      .includes-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .includes-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 14px;
+        color: #d4d4d8;
+      }
+      .li-icon {
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      .li-icon-muted .li-icon svg {
+        color: #71717a;
+      }
+
+      /* Recommendations grid */
+      .rec-grid {
+        display: grid;
+        gap: 12px;
+        max-width: 1024px;
+        margin: 24px auto 0;
+      }
+      @media (min-width: 640px) {
+        .rec-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .rec-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .rec-card {
+        border-radius: 8px;
+        border: 1px solid #27272a;
+        background: rgba(24, 24, 27, 0.5);
+        padding: 16px;
+      }
+      .rec-card .tariff {
+        font-weight: 500;
+        color: #fbbf24;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .rec-card .desc {
+        font-size: 14px;
+        color: #a1a1aa;
+      }
+
+      /* Highlights grid */
+      .hl-grid {
+        display: grid;
+        gap: 8px;
+        max-width: 1024px;
+        margin: 16px auto 0;
+      }
+      @media (min-width: 640px) {
+        .hl-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .hl-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* Year structure */
+      .year-list {
+        max-width: 1024px;
+        margin: 16px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .year-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        border-radius: 8px;
+        border: 1px solid #27272a;
+        background: rgba(24, 24, 27, 0.5);
+        padding: 16px;
+      }
+      @media (min-width: 640px) {
+        .year-item {
+          flex-direction: row;
+          align-items: baseline;
+          gap: 16px;
+        }
+      }
+      .year-period {
+        font-size: 14px;
+        font-weight: 500;
+        color: #fbbf24;
+        flex-shrink: 0;
+      }
+      @media (min-width: 640px) {
+        .year-period {
+          width: 176px;
+        }
+      }
+      .year-topic {
+        font-size: 14px;
+        color: #d4d4d8;
+      }
+
+      /* Contacts */
+      .contacts-wrap {
+        max-width: 576px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+      .contacts-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        border-radius: 8px;
+        border: 1px solid #27272a;
+        background: rgba(24, 24, 27, 0.5);
+        padding: 12px 20px;
+        text-decoration: none;
+        color: inherit;
+        font-size: 14px;
+        transition: border-color 0.2s;
+      }
+      .contact-link:hover {
+        border-color: #3f3f46;
+      }
+      .contact-icon-wrap {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #27272a;
+      }
+      .contact-label {
+        color: #71717a;
+      }
+      .contact-value {
+        color: #fff;
+      }
+      .contact-row {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .signup-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 8px;
+        background: #f59e0b;
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #18181b;
+        text-decoration: none;
+        transition: background-color 0.2s;
+      }
+      .signup-btn:hover {
+        background: #fbbf24;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-pattern"></div>
+      <div class="hero-circle1"></div>
+      <div class="hero-circle2"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-photo-wrap">
+            <div class="hero-photo-inner">
+              <div class="hero-ring1"></div>
+              <div class="hero-ring2"></div>
+              <div class="hero-photo">
+                <img src="public/assets/olga.jpg" alt="Ольга Александровна" />
+              </div>
+            </div>
+          </div>
+          <div class="hero-text">
+            <div class="hero-badge">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fbbf24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
+                />
+              </svg>
+              Преподаватель русского языка
+            </div>
+            <h1>Ольга Александровна</h1>
+            <p class="hero-subtitle">
+              преподаватель русского языка, школа ЗебРус
+            </p>
+            <div class="hero-stats">
+              <div>
+                <div class="stat-value">30+</div>
+                <div class="stat-label">лет в профессии</div>
+              </div>
+              <div>
+                <div class="stat-value">8</div>
+                <div class="stat-label">лет онлайн</div>
+              </div>
+              <div>
+                <div class="stat-value">6</div>
+                <div class="stat-label">параллелей</div>
+              </div>
+              <div>
+                <div class="stat-value">100%</div>
+                <div class="stat-label">проходят порог</div>
+              </div>
+            </div>
+            <blockquote class="hero-quote">
+              <span class="hero-quote-mark">&ldquo;</span>
+              Я не даю громких обещаний о 100 баллах, но гарантирую максимальную
+              отдачу. У каждого ребёнка свой потенциал, моя задача — помочь
+              дойти до максимума.
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">О себе</h2>
+        <div class="about-text">
+          <p>
+            Ольга Александровна, преподаватель русского языка, школа ЗебРус.
+            Готовлю детей 6–11 классов к ВПР, ОГЭ и ЕГЭ на уроках, в чате и в
+            личных кабинетах.
+          </p>
+          <p>
+            Преподаю русский язык больше 30 лет, из них 8 лет — в
+            онлайн-формате. В апреле 2026 года прошла обучение от ФИПИ по
+            экспертной проверке письменных работ ЕГЭ и ОГЭ.
+          </p>
+          <div class="about-box">
+            <div class="about-box-flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fbbf24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="flex-shrink: 0; margin-top: 2px"
+              >
+                <path
+                  d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                />
+                <path d="M12 8v4" />
+                <path d="M12 16h.01" />
+              </svg>
+              <p style="color: #fcd34d; font-size: 14px">
+                Школа ЗебРус имеет образовательную лицензию Министерства
+                образования Московской области — родители могут оформить
+                налоговый вычет за обучение.
+              </p>
+            </div>
+          </div>
+          <div class="about-side">
+            <div class="about-side-flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fbbf24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="flex-shrink: 0; margin-top: 2px"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              <div class="about-side-content">
+                <h3>Моя сильная сторона</h3>
+                <p>
+                  Работа с группами больше 20 человек с индивидуальным вниманием
+                  через ежедневные задания в чате, личные сообщения, подробные
+                  проверки сочинений и поддержку кураторов.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section style="background: #09090b">
+      <div class="container">
+        <h2 class="section-title">Как устроена работа</h2>
+        <div class="how-grid">
+          <div class="how-card">
+            <div class="how-card-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fbbf24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"
+                />
+                <rect x="2" y="6" width="14" height="12" rx="2" />
+              </svg>
+            </div>
+            <h3>Занятия в Zoom</h3>
+            <p>
+              Групповые занятия проходят онлайн в Zoom. После каждого урока —
+              запись, конспект и материалы для отработки.
+            </p>
+          </div>
+          <div class="how-card">
+            <div class="how-card-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fbbf24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+              </svg>
+            </div>
+            <h3>Telegram-чат</h3>
+            <p>
+              Ежедневная работа в Telegram-чате: утром задания в формате
+              опросов, вечером видеоразбор, карточка с полезным материалом
+              каждое утро.
+            </p>
+          </div>
+          <div class="how-card">
+            <div class="how-card-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fbbf24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg>
+            </div>
+            <h3>Личные кабинеты</h3>
+            <p>
+              Результаты собираются в личных кабинетах ученика и родителя на
+              платформе Buildin.
+            </p>
+          </div>
+          <div class="how-card">
+            <div class="how-card-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fbbf24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
+                />
+              </svg>
+            </div>
+            <h3>Пробная неделя</h3>
+            <p>
+              Перед стартом можно попробовать бесплатно: неделя в чате и формате
+              занятий.
+            </p>
+          </div>
+          <div class="how-card">
+            <div class="how-card-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fbbf24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"
+                />
+              </svg>
+            </div>
+            <h3>Контроль активности</h3>
+            <p>При падении активности ниже 75% лично пишу родителям.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tariffs by grade -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Тарифы по классам</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Класс</th>
+                <th>Стоимость</th>
+                <th>Формат</th>
+                <th>Расписание</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-grade">6 класс</td>
+                <td class="table-price">4 500 ₽/мес</td>
+                <td>4 урока/мес + чат ежедневно</td>
+                <td>школьная программа + ВПР</td>
+              </tr>
+              <tr>
+                <td class="table-grade">7 класс</td>
+                <td class="table-price">4 500 ₽/мес</td>
+                <td>4 урока/мес + чат</td>
+                <td>Понедельник 16:00</td>
+              </tr>
+              <tr>
+                <td class="table-grade">8 класс</td>
+                <td class="table-price">4 500 ₽/мес</td>
+                <td>4 урока/мес + чат</td>
+                <td>Вторник 16:00</td>
+              </tr>
+              <tr>
+                <td class="table-grade">9 / ОГЭ</td>
+                <td class="table-price">7 000 ₽/мес</td>
+                <td>8 уроков/мес + чат</td>
+                <td>Пн и Ср 17:00</td>
+              </tr>
+              <tr>
+                <td class="table-grade">10 класс</td>
+                <td class="table-price">5 200 ₽/мес</td>
+                <td>4 урока/мес + чат</td>
+                <td>Четверг 16:00</td>
+              </tr>
+              <tr>
+                <td class="table-grade">11 / ЕГЭ</td>
+                <td class="table-price">от 8 500 ₽/мес</td>
+                <td>8 уроков/мес + чат</td>
+                <td>Вт и Чт 17:00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="includes-grid">
+          <div class="includes-block">
+            <h3>Что входит в базовый тариф</h3>
+            <ul class="includes-list">
+              <li>
+                <span class="li-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fbbf24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                ></span>
+                Групповые занятия в Zoom
+              </li>
+              <li>
+                <span class="li-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fbbf24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                ></span>
+                Ежедневный Telegram-чат — 3–5 заданий каждый будний день
+              </li>
+              <li>
+                <span class="li-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fbbf24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                ></span>
+                Проверка письменных работ
+              </li>
+              <li>
+                <span class="li-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fbbf24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                ></span>
+                Поддержка куратора и личная помощь
+              </li>
+              <li>
+                <span class="li-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fbbf24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                ></span>
+                Запись пропущенных уроков
+              </li>
+              <li>
+                <span class="li-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fbbf24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                ></span>
+                Пробные экзамены в 9 и 11 классах
+              </li>
+            </ul>
+          </div>
+          <div class="includes-block">
+            <h3>Доплаты</h3>
+            <ul class="includes-list li-icon-muted">
+              <li>
+                <span class="li-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#71717a"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                ></span>
+                Интенсив перед экзаменом для 9 и 11 классов
+              </li>
+              <li>
+                <span class="li-icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#71717a"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                ></span>
+                В 11 классе: апрельский и майский пробники — пополам с
+                родителями, февральский — за мой счёт
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EGE tariffs -->
+    <section style="background: #09090b">
+      <div class="container">
+        <h2 class="section-title">Тарифы ЕГЭ — подробно</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Тариф</th>
+                <th>Цена</th>
+                <th>Описание</th>
+                <th>Добавляется к Оптимальному</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-grade">Оптимальный</td>
+                <td class="table-price">8 500 ₽/мес</td>
+                <td>8 групповых занятий, проверка сочинений, чат, куратор</td>
+                <td style="color: #a1a1aa">—</td>
+              </tr>
+              <tr>
+                <td class="table-grade">Базовый</td>
+                <td class="table-price">9 500 ₽/мес</td>
+                <td>8 групповых занятий + 1 индивидуальное</td>
+                <td style="color: #a1a1aa">+1 индивидуальное</td>
+              </tr>
+              <tr>
+                <td class="table-grade">Парный</td>
+                <td class="table-price">10 000 ₽/мес</td>
+                <td>8 групповых занятий + 2 парные встречи</td>
+                <td style="color: #a1a1aa">+2 парные встречи</td>
+              </tr>
+              <tr>
+                <td class="table-grade">
+                  Стандарт <span class="popular-badge">Выбор учеников</span>
+                </td>
+                <td class="table-price">11 000 ₽/мес</td>
+                <td>8 групповых занятий + 2 индивидуальных</td>
+                <td style="color: #a1a1aa">+2 индивидуальных</td>
+              </tr>
+              <tr>
+                <td class="table-grade">Расширенный</td>
+                <td class="table-price">11 500 ₽/мес</td>
+                <td>8 групповых занятий + 4 парные встречи</td>
+                <td style="color: #a1a1aa">+4 парные встречи</td>
+              </tr>
+              <tr>
+                <td class="table-grade">Максимум</td>
+                <td class="table-price">13 000 ₽/мес</td>
+                <td>8 групповых занятий + 4 индивидуальных еженедельно</td>
+                <td style="color: #a1a1aa">+4 индивидуальных еженедельно</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Recommendations -->
+        <div style="max-width: 1024px; margin: 48px auto 0">
+          <h3
+            style="
+              font-size: 18px;
+              font-weight: 600;
+              color: #fff;
+              margin-bottom: 16px;
+            "
+          >
+            Рекомендации по выбору тарифа
+          </h3>
+          <div class="rec-grid">
+            <div class="rec-card">
+              <div class="tariff">Оптимальный</div>
+              <p class="desc">
+                При полной включённости одного Оптимального достаточно.
+              </p>
+            </div>
+            <div class="rec-card">
+              <div class="tariff">С индивидуальными</div>
+              <p class="desc">
+                +1–2 индивидуальных, если по входному тесту менее 15 баллов.
+              </p>
+            </div>
+            <div class="rec-card">
+              <div class="tariff">Максимум</div>
+              <p class="desc">При слабой стартовой базе и цели 60+.</p>
+            </div>
+            <div class="rec-card">
+              <div class="tariff">Любой тариф</div>
+              <p class="desc">100 баллов возможны на любом тарифе.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course goal -->
+        <div style="max-width: 1024px; margin: 48px auto 0">
+          <h3
+            style="
+              font-size: 18px;
+              font-weight: 600;
+              color: #fff;
+              margin-bottom: 16px;
+            "
+          >
+            Цель курса — 90+ баллов
+          </h3>
+          <p style="font-size: 14px; color: #d4d4d8; margin-bottom: 16px">
+            Летний бесплатный курс с 15 июня → отдых в августе →
+            сентябрь–декабрь двойная подготовка (итоговое сочинение + тест) →
+            январь–май полный формат.
+          </p>
+          <ul class="includes-list hl-grid">
+            <li>
+              <span class="li-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" /></svg></span
+              ><span style="color: #a1a1aa"
+                >Летний бесплатный курс с 15 июня</span
+              >
+            </li>
+            <li>
+              <span class="li-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" /></svg></span
+              ><span style="color: #a1a1aa"
+                >Сентябрь–декабрь: двойная подготовка — итоговое сочинение +
+                тест</span
+              >
+            </li>
+            <li>
+              <span class="li-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" /></svg></span
+              ><span style="color: #a1a1aa"
+                >Январь–май: полный формат подготовки</span
+              >
+            </li>
+            <li>
+              <span class="li-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" /></svg></span
+              ><span style="color: #a1a1aa"
+                >Регулярный мониторинг прогресса</span
+              >
+            </li>
+            <li>
+              <span class="li-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" /></svg></span
+              ><span style="color: #a1a1aa"
+                >Индивидуальный подход к каждому ученику</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Year structure -->
+        <div style="max-width: 1024px; margin: 48px auto 0">
+          <h3
+            style="
+              font-size: 18px;
+              font-weight: 600;
+              color: #fff;
+              margin-bottom: 16px;
+            "
+          >
+            Структура года
+          </h3>
+          <div class="year-list">
+            <div class="year-item">
+              <span class="year-period">С 15 июня — летний курс</span>
+              <span class="year-topic"
+                >Бесплатный летний курс для погружения в формат</span
+              >
+            </div>
+            <div class="year-item">
+              <span class="year-period">Август</span>
+              <span class="year-topic">Отдых</span>
+            </div>
+            <div class="year-item">
+              <span class="year-period">Сентябрь — декабрь</span>
+              <span class="year-topic"
+                >Двойная подготовка: итоговое сочинение + тестовая часть</span
+              >
+            </div>
+            <div class="year-item">
+              <span class="year-period">Январь — май</span>
+              <span class="year-topic"
+                >Полный формат: все типы заданий, сочинения, пробники</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Schedule -->
+        <div style="max-width: 1024px; margin: 48px auto 0">
+          <h3
+            style="
+              font-size: 18px;
+              font-weight: 600;
+              color: #fff;
+              margin-bottom: 16px;
+            "
+          >
+            Расписание
+          </h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>День</th>
+                  <th>Время</th>
+                  <th>Формат</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-grade">Вторник</td>
+                  <td>17:00–18:30</td>
+                  <td>Групповое занятие</td>
+                </tr>
+                <tr>
+                  <td class="table-grade">Четверг</td>
+                  <td>17:00–18:30</td>
+                  <td>Групповое занятие</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Mock exams -->
+        <div style="max-width: 1024px; margin: 48px auto 0">
+          <h3
+            style="
+              font-size: 18px;
+              font-weight: 600;
+              color: #fff;
+              margin-bottom: 16px;
+            "
+          >
+            Пробные экзамены
+          </h3>
+          <p style="font-size: 14px; color: #d4d4d8; margin-bottom: 16px">
+            3 пробных экзамена офлайн в Серпухове. Продолжительность — 3,5 часа.
+            Февральский пробник — за мой счёт, апрельский и майский — пополам с
+            родителями.
+          </p>
+          <ul
+            class="includes-list hl-grid"
+            style="grid-template-columns: repeat(2, 1fr)"
+          >
+            <li>
+              <span class="li-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" /></svg></span
+              ><span style="color: #a1a1aa"
+                >3 пробных экзамена офлайн в Серпухове</span
+              >
+            </li>
+            <li>
+              <span class="li-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" /></svg></span
+              ><span style="color: #a1a1aa">Продолжительность 3,5 часа</span>
+            </li>
+            <li>
+              <span class="li-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" /></svg></span
+              ><span style="color: #a1a1aa">Февраль — за мой счёт</span>
+            </li>
+            <li>
+              <span class="li-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" /></svg></span
+              ><span style="color: #a1a1aa"
+                >Апрель и май — пополам с родителями</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Контакты и запись</h2>
+        <div class="contacts-wrap">
+          <div class="contacts-grid">
+            <a
+              href="https://t.me/OlgaKh_an"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+            >
+              <span class="contact-icon-wrap">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 2 11 13" />
+                  <path d="M22 2 7 21l-4-9-9-4 20-6z" />
+                  <path d="m22 2-5 18-5-9" />
+                </svg>
+              </span>
+              <div class="contact-row">
+                <span class="contact-label">Telegram</span>
+                <span class="contact-value">@OlgaKh_an</span>
+              </div>
+            </a>
+            <a
+              href="https://vk.com/id273960071"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+            >
+              <span class="contact-icon-wrap">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M2 12h20" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  />
+                </svg>
+              </span>
+              <div class="contact-row">
+                <span class="contact-label">ВКонтакте</span>
+                <span class="contact-value">vk.com/id273960071</span>
+              </div>
+            </a>
+            <a href="tel:+79163617412" class="contact-link">
+              <span class="contact-icon-wrap">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </span>
+              <div class="contact-row">
+                <span class="contact-label">Телефон</span>
+                <span class="contact-value">+7 (916) 361-74-12</span>
+              </div>
+            </a>
+            <a href="mailto:olga-153@yandex.ru" class="contact-link">
+              <span class="contact-icon-wrap">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fbbf24"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </span>
+              <div class="contact-row">
+                <span class="contact-label">Почта</span>
+                <span class="contact-value">olga-153@yandex.ru</span>
+              </div>
+            </a>
+          </div>
+          <a
+            href="https://forms.yandex.ru/u/694839dff47e734ba2954bee"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="signup-btn"
+          >
+            Записаться
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
